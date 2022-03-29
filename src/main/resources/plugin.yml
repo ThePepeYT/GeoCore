@@ -1,0 +1,4 @@
+main: com.thepepeyt.geocraft.Main
+version: 0.0.1
+name: GeoCore
+api-version: 1.18
