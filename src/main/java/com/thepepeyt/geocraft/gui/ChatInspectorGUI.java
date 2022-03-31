@@ -30,7 +30,7 @@ public class ChatInspectorGUI extends FastInv {
                 .build(), gui -> {
             plugin.getChatManager().toggleChat();
             String isworking = !plugin.getChatManager().isChat() ? "wy\u0142\u0105czony" : "w\u0142\u0105czony";
-            Bukkit.getOnlinePlayers().forEach(player -> plugin.getMessageManager().sendFancyMessage("System",
+            Bukkit.getOnlinePlayers().forEach(player -> plugin.getMessageManager().sendFancyMessage("HalfWorld",
                     "Czat",
                     "  Czat zosta\u0142\n       " + isworking + " przez " + gui.getWhoClicked().getName(), player));
             gui.getWhoClicked().closeInventory();
@@ -40,7 +40,7 @@ public class ChatInspectorGUI extends FastInv {
                 .name(plugin.getMessageManager().getString("<blue>Wyczy\u015B\u0107 czat")).build(), gui -> {
 
             plugin.getChatManager().clearChat();
-            Bukkit.getOnlinePlayers().forEach(player -> plugin.getMessageManager().sendFancyMessage("System",
+            Bukkit.getOnlinePlayers().forEach(player -> plugin.getMessageManager().sendFancyMessage("HalfWorld",
                     "Czat", "  Czat zosta\u0142\n      wyczyszczony przez " + gui.getWhoClicked().getName(), player));
             gui.getWhoClicked().closeInventory();
 

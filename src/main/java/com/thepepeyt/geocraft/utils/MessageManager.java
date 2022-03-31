@@ -59,4 +59,20 @@ public class MessageManager {
         sendMessage("", player);
     }
 
+    public void sendFancyMessageList(String type, String title, String desc, Player player){
+        sendMessage("", player);
+        sendMessage("", player);
+        sendMessage("             <#d7a220>\u2620</#d7a220> <#bab469>|</#bab469> <color:#8968cd>" + type + "</color:#8968cd> <#bab469>|</#bab469> <#d7a220>\u2620", player);
+        sendMessage("<#d7a220>\u2730</#d7a220> <#bab469><strikethrough>\u02D2 \u2666           \u2726</strikethrough>| <#d7a220>\u231B</#d7a220> |<#bab469><strikethrough>\u2726           \u2666 <bold>\u02D3</bold></strikethrough> <#d7a220>\u2730</#d7a220>", player);
+        sendMessage("        <#d7a220>\u2730</#d7a220> <#bab469><strikethrough>\u02D2 \u2666              \u2666 \u02D2</strikethrough> <#d7a220>\u2730</#d7a220>", player);
+        sendMessage("", player);
+        sendMessage("               <#d7a220>\u2693 <white>" + title + "</white> \u2693", player);
+        sendMessage("", player);
+        sendMessage(desc, player);
+        sendMessage("", player);
+        sendMessage("        <#d7a220>\u2730</#d7a220> <#bab469><strikethrough>\u02D2 \u2666              \u2666 \u02D2</strikethrough> <#d7a220>\u2730</#d7a220>", player);
+        sendMessage("", player);
+        sendMessage("", player);
+    }
+
 }

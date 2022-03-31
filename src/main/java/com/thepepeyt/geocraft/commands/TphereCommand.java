@@ -5,6 +5,7 @@ import com.thepepeyt.geocraft.commands.api.Command;
 import com.thepepeyt.geocraft.commands.api.CommandArguments;
 import com.thepepeyt.geocraft.commands.api.Completer;
 import com.thepepeyt.geocraft.gui.TeleportGUI;
+import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
 import java.util.Arrays;
@@ -21,10 +22,18 @@ public class TphereCommand {
     @Command(
             name = "tphere",
             senderType = Command.SenderType.PLAYER,
-            permission = "GeoCore.tphere"
+            permission = "GeoCore.tphere",
+            max = 1
     )
     public void execute(CommandArguments arguments) {
-        new TeleportGUI(plugin, "here").open(arguments.getSender());
+        if(arguments.isArgumentsEmpty()){
+            new TeleportGUI(plugin, "here").open(arguments.getSender());
+        }
+        else{
+            Bukkit.getOnlinePlayers().forEach(player -> player.teleport((Player) arguments.getSender()));
+            plugin.getMessageManager().sendFancyMessage("HalfWorld", "Teleportacja", "<green>Pomy\u015Blnie przeteleportowano\n            wszystkich graczy do ciebie", (Player) arguments.getSender());
+        }
+
     }
 
 

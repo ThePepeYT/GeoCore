@@ -5,15 +5,19 @@ import com.thepepeyt.geocraft.commands.*;
 import com.thepepeyt.geocraft.commands.api.CommandFramework;
 import com.thepepeyt.geocraft.commands.api.StringMatcher;
 import com.thepepeyt.geocraft.listeners.ChatInspectorListener;
+import com.thepepeyt.geocraft.listeners.VanishListener;
 import com.thepepeyt.geocraft.utils.ChatManager;
 import com.thepepeyt.geocraft.utils.MessageManager;
 import com.thepepeyt.geocraft.utils.TeleportManager;
+import com.thepepeyt.geocraft.utils.VanishManager;
 import fr.mrmicky.fastinv.FastInvManager;
 import lombok.Getter;
 import net.kyori.adventure.platform.bukkit.BukkitAudiences;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 public class Main extends JavaPlugin {
@@ -21,17 +25,20 @@ public class Main extends JavaPlugin {
 
 
     private CommandFramework commandFramework;
-
-
+    
     @Getter
     private final TeleportManager teleportManager = new TeleportManager(this);
 
     @Getter
     private final ChatManager chatManager = new ChatManager(this);
 
+    @Getter
+    private final VanishManager vanishManager = new VanishManager(this);
+
 
     @Getter
     private MessageManager messageManager;
+
 
     @Override
     public void onEnable() {
@@ -52,7 +59,14 @@ public class Main extends JavaPlugin {
         commandFramework.registerCommands(new InvseeCommand(this));
         commandFramework.registerCommands(new TphereCommand(this));
         commandFramework.registerCommands(new TptoCommand(this));
+        commandFramework.registerCommands(new VanishCommand(this));
+        commandFramework.registerCommands(new HealCommand(this));
+        commandFramework.registerCommands(new EnderChestCommand(this));
+        commandFramework.registerCommands(new WhoISCommand(this));
+        commandFramework.registerCommands(new HatCommand(this));
+        commandFramework.registerCommands(new DisposeCommand(this));
         this.getServer().getPluginManager().registerEvents(new ChatInspectorListener(this), this);
+        this.getServer().getPluginManager().registerEvents(new VanishListener(this), this);
         FastInvManager.register(this);
 
         commandFramework.setAnyMatch(arguments -> {

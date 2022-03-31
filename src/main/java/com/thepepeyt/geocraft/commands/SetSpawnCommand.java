@@ -32,7 +32,7 @@ public class SetSpawnCommand {
 
 
 
-        plugin.getMessageManager().sendFancyMessage("System", "Spawn",
+        plugin.getMessageManager().sendFancyMessage("HalfWorld", "Spawn",
                 "Ustawiono spawn na\n      koordynatach {x},{y},{z}"
                         .replace("{x}", String.valueOf(Math.round(player.getLocation().getX())))
                         .replace("{y}", String.valueOf(Math.round(player.getLocation().getY())))

@@ -26,7 +26,7 @@ public class PingCommand {
         // CommandArguments class contains basic things related Bukkit commands
         Player sender = (Player) arguments.getSender();
 
-        plugin.getMessageManager().sendFancyMessage("System", "Tescior", "Testowa wiadomosc", sender);
+        plugin.getMessageManager().sendFancyMessage("HalfWorld", "Tescior", "Testowa wiadomosc", sender);
         // And here it's all done, you've created command with properties above!
 
     }

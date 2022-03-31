@@ -28,12 +28,12 @@ public class GamemodeGUI extends FastInv {
             player.setGameMode(GameMode.CREATIVE);
 
             if (player.equals(gui.getWhoClicked())) {
-                plugin.getMessageManager().sendFancyMessage("System", "Gamemode", plugin.getMessageManager().getString("  Zmieni\u0142e\u015B sw\u00F3j\n           tryb gry na kreatywny"), player);
+                plugin.getMessageManager().sendFancyMessage("HalfWorld", "Gamemode", plugin.getMessageManager().getString("  Zmieni\u0142e\u015B sw\u00F3j\n           tryb gry na kreatywny"), player);
                 gui.getWhoClicked().closeInventory();
                 return;
             }
-            plugin.getMessageManager().sendFancyMessage("System", "Gamemode", "Tw\u00F3j tryb gry zosta\u0142 zmieniony na kreatywny", player);
-            plugin.getMessageManager().sendFancyMessage("System", "Gamemode", "Zmieni\u0142e\u015B tryb gracza " + player + " na kreatywny", (Player) gui.getWhoClicked());
+            plugin.getMessageManager().sendFancyMessage("HalfWorld", "Gamemode", "Tw\u00F3j tryb gry zosta\u0142 zmieniony na kreatywny", player);
+            plugin.getMessageManager().sendFancyMessage("HalfWorld", "Gamemode", "Zmieni\u0142e\u015B tryb gracza " + player + " na kreatywny", (Player) gui.getWhoClicked());
             gui.getWhoClicked().closeInventory();
 
         });
@@ -45,12 +45,12 @@ public class GamemodeGUI extends FastInv {
             player.setGameMode(GameMode.SURVIVAL);
 
             if (player.equals(gui.getWhoClicked())) {
-                plugin.getMessageManager().sendFancyMessage("System", "Gamemode", plugin.getMessageManager().getString("  Zmieni\u0142e\u015B sw\u00F3j\n          tryb gry na surwiwal"), player);
+                plugin.getMessageManager().sendFancyMessage("HalfWorld", "Gamemode", plugin.getMessageManager().getString("  Zmieni\u0142e\u015B sw\u00F3j\n          tryb gry na surwiwal"), player);
                 gui.getWhoClicked().closeInventory();
                 return;
             }
-            plugin.getMessageManager().sendFancyMessage("System", "Gamemode", "Tw\u00F3j tryb gry zosta\u0142 zmieniony na surwiwal", player);
-            plugin.getMessageManager().sendFancyMessage("System", "Gamemode", "Zmieni\u0142e\u015B tryb gracza " + player + " na surwiwal", (Player) gui.getWhoClicked());
+            plugin.getMessageManager().sendFancyMessage("HalfWorld", "Gamemode", "Tw\u00F3j tryb gry zosta\u0142 zmieniony na surwiwal", player);
+            plugin.getMessageManager().sendFancyMessage("HalfWorld", "Gamemode", "Zmieni\u0142e\u015B tryb gracza " + player + " na surwiwal", (Player) gui.getWhoClicked());
             gui.getWhoClicked().closeInventory();
 
         });
@@ -61,12 +61,12 @@ public class GamemodeGUI extends FastInv {
             player.setGameMode(GameMode.SPECTATOR);
 
             if (player.equals(gui.getWhoClicked())) {
-                plugin.getMessageManager().sendFancyMessage("System", "Gamemode", plugin.getMessageManager().getString("  Zmieni\u0142e\u015B sw\u00F3j\n          tryb gry na spektatora"), player);
+                plugin.getMessageManager().sendFancyMessage("HalfWorld", "Gamemode", plugin.getMessageManager().getString("  Zmieni\u0142e\u015B sw\u00F3j\n          tryb gry na spektatora"), player);
                 gui.getWhoClicked().closeInventory();
                 return;
             }
-            plugin.getMessageManager().sendFancyMessage("System", "Gamemode", "Tw\u00F3j tryb gry zosta\u0142 zmieniony na spektatora", player);
-            plugin.getMessageManager().sendFancyMessage("System", "Gamemode", "Zmieni\u0142e\u015B tryb gracza " + player + " na spektatora", (Player) gui.getWhoClicked());
+            plugin.getMessageManager().sendFancyMessage("HalfWorld", "Gamemode", "Tw\u00F3j tryb gry zosta\u0142 zmieniony na spektatora", player);
+            plugin.getMessageManager().sendFancyMessage("HalfWorld", "Gamemode", "Zmieni\u0142e\u015B tryb gracza " + player + " na spektatora", (Player) gui.getWhoClicked());
             gui.getWhoClicked().closeInventory();
         });
         this.plugin = plugin;

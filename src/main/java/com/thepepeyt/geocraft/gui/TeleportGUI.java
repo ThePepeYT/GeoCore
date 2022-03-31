@@ -37,11 +37,11 @@ public class TeleportGUI extends FastInv {
             setItem(i, new ItemBuilder(skull).name(plugin.getMessageManager().getString("<green>" + players.get(i).getName())).build(), gui ->{
                 if(type.equalsIgnoreCase("to")){
                     gui.getWhoClicked().teleport(player);
-                    plugin.getMessageManager().sendFancyMessage("System", "Teleportacja", "<green>Pomy\u015Blnie przeteleportowano\n               do " + player.getName(), (Player) gui.getWhoClicked());
+                    plugin.getMessageManager().sendFancyMessage("HalfWorld", "Teleportacja", "<green>Pomy\u015Blnie przeteleportowano\n               do " + player.getName(), (Player) gui.getWhoClicked());
                 }
                 else{
                     player.teleport(gui.getWhoClicked());
-                    plugin.getMessageManager().sendFancyMessage("System", "Teleportacja", "<green>Pomy\u015Blnie przeteleportowano\n               " + player.getName() + " do ciebie", (Player) gui.getWhoClicked());
+                    plugin.getMessageManager().sendFancyMessage("HalfWorld", "Teleportacja", "<green>Pomy\u015Blnie przeteleportowano\n               " + player.getName() + " do ciebie", (Player) gui.getWhoClicked());
                 }
 
             });
