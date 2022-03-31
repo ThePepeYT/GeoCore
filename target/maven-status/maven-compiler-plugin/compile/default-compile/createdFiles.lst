@@ -2,6 +2,7 @@ com\thepepeyt\geocraft\commands\api\Command.class
 com\thepepeyt\geocraft\commands\api\CommandFramework.class
 com\thepepeyt\geocraft\Main.class
 com\thepepeyt\geocraft\utils\ChatManager.class
+com\thepepeyt\geocraft\hooks\PlaceHolderAPIHook.class
 com\thepepeyt\geocraft\commands\VanishCommand.class
 com\thepepeyt\geocraft\utils\MessageManager.class
 com\thepepeyt\geocraft\utils\TeleportManager.class

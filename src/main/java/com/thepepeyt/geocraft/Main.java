@@ -65,6 +65,7 @@ public class Main extends JavaPlugin {
         commandFramework.registerCommands(new WhoISCommand(this));
         commandFramework.registerCommands(new HatCommand(this));
         commandFramework.registerCommands(new DisposeCommand(this));
+        commandFramework.registerCommands(new PersonalMessageCommand(this));
         this.getServer().getPluginManager().registerEvents(new ChatInspectorListener(this), this);
         this.getServer().getPluginManager().registerEvents(new VanishListener(this), this);
         FastInvManager.register(this);

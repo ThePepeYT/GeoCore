@@ -13,11 +13,10 @@ import java.util.stream.Collectors;
 
 public class PersonalMessageCommand {
 
-    public static final Player[] players = (Player[]) Bukkit.getOnlinePlayers().toArray();
 
     private Main plugin;
 
-    private HashMap<Player, Player> last_dm = new HashMap<>();
+    private HashMap<UUID, UUID> last_dm = new HashMap<>();
 
     public PersonalMessageCommand(Main plugin){
         this.plugin = plugin;
@@ -29,12 +28,21 @@ public class PersonalMessageCommand {
             senderType = Command.SenderType.PLAYER,
             permission = "GeoCore.ping",
             min = 1,
-            max = 2
+            max = 200
     )
     public void execute(CommandArguments arguments) {
-        String message = arguments.getArgument(0);
-        Player user = last_dm.containsKey((Player) arguments.getSender()) ? last_dm.get((Player) arguments.getSender()) : Bukkit.getPlayer(Objects.requireNonNull(arguments.getArgument(1)));
+        Player player = arguments.getSender();
+        StringBuilder stringBuilder = new StringBuilder();
 
+        for (int i = 1; i < arguments.getArguments().length; i++) {
+            stringBuilder.append(arguments.getArgument(i) + " ");
+
+        }
+
+
+        Player user = last_dm.containsKey(player.getUniqueId()) ? Bukkit.getPlayer(last_dm.get(player.getUniqueId())) : Bukkit.getPlayer(Objects.requireNonNull(arguments.getArgument(0)));
+        plugin.getMessageManager().sendMessage(plugin.getMessageManager().getString("<#d7a220>\u2693</#d7a220><#bab469> | " + user.getName() + " \u21A6 Ty <#d7a220>\u272B <white>" + stringBuilder.toString()), user);
+        plugin.getMessageManager().sendMessage(plugin.getMessageManager().getString("<#d7a220>\u2693</#d7a220><#bab469> | Ty \u21A6 " + user.getName() + " <#d7a220>\u272B <white>" + stringBuilder.toString()), player);
 
 
 

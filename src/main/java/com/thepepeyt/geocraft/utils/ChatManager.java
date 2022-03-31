@@ -40,7 +40,7 @@ public final class ChatManager {
 
 
     public boolean canSendMessage(final Player player) {
-        return player.hasPermission("geocore.chat.bypass") && this.chat;
+        return player.hasPermission("geocore.chat.bypass") | this.chat;
     }
 
 
